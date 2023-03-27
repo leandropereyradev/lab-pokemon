@@ -1,12 +1,12 @@
 import React from "react";
 import Pokemon from "./Pokemon";
 
-function PokemonList({ pokemons }) {
+function PokemonList({ pokemons, firstIndex, lastIndex }) {
   return (
-    <div>
-      {pokemons.map((pokemon) => (
-        <Pokemon pokemon={pokemon} key={pokemon.id} />
-      ))}
+    <div className="pokemons-container">
+      {pokemons
+        .map((pokemon) => <Pokemon pokemon={pokemon} key={pokemon.id} />)
+        .slice(firstIndex, lastIndex)}
     </div>
   );
 }

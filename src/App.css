@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Container */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Filters */
+.filters {
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters .btn-filter {
+  display: flex;
+  gap: 3rem;
+}
+
+.filters .btn-filter button {
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(229, 117, 117);
+  color: #f1f1f1;
+  width: 15rem;
+  height: 2.5rem;
+}
+
+.filters input,
+.filters select {
+  width: 15rem;
+  color: #f1f1f1;
+  background-color: rgb(229, 117, 117);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+}
+
+.filters input::placeholder {
+  color: #f1f1f1;
+}
+
+/* Pokemons */
+.pokemons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  row-gap: 5rem;
+  padding-bottom: 10rem;
+}
+
+/* Pokemon */
+.pokemon-container {
+  background-color: #f1f1f1;
+  width: 13rem;
+  height: 12rem;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+  box-shadow: 0 0 18px 0 rgba(250, 250, 250, 0.6);
+  color: aliceblue;
+}
+
+.pokemon-container:hover {
+  transform: scale(1.1);
+}
+
+.pokemon-container img,
+.pokemon-container h1 {
+  background-color: transparent;
+}
+
+.pokemon-container h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Modal */
+
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 20;
+  animation: dropSizes 0.8s linear;
+}
+
+@keyframes dropSizes {
+  0% {
+    transform: scale(20);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  min-width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: rgba(250, 250, 250, 0.9) 0px 0px 20px 4px;
+  animation: dropTop 0.3s linear;
+  z-index: 30;
+  color: #f1f1f1;
+}
+
+@keyframes dropTop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal .btn-close {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 100%;
+  border: none;
+  color: #f1f1f1;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal .pokeball {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal .imgPokemon {
+  width: 10rem;
+  background-color: transparent;
+}
+
+.modal h1 {
+  background-color: transparent;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  background-color: transparent;
+}
+
+.modal .img-title {
+  background-color: transparent;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.modal .stats {
+  background-color: transparent;
+  padding: 2rem;
+}
+
+.modal .stat-container {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 0.5rem;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.modal .stat-key {
+  background-color: transparent;
+}
+
+.modal .stat-bar {
+  background-color: rgba(255, 255, 255, 0.184);
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.modal .stat {
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 0 5px 0;
+  margin: 0 5px;
+}
+
+.modal .stat p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #f1f1f1;
+}
+
+.modal .type {
+  background-color: transparent;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.modal .type button {
+  color: #f1f1f1;
+  border: none;
+  width: 10rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Pagination */
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  padding: 2rem 0 2rem 0;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+.pagination-container ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.pagination-container ul li button,
+.pagination-container .btn-direction {
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(229, 117, 117);
+  color: #f1f1f1;
+}
+
+.pagination-container ul li button {
+  width: 3rem;
+}
+
+.pagination-container .btn-direction {
+  width: 8rem;
+  height: 2.5rem;
+}
+
+.pagination-container .active {
+  background-color: crimson;
+}
